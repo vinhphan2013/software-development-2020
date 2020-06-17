@@ -1,14 +1,43 @@
 package com.example.helloworld;
 
+import java.util.*;
 public class TestList {
-    private Recursion[] parent = new Recursion[3];
-    private int counter = 0;
+    public static void main(String args[]){
 
-    public void add(Recursion i){
-        if(counter < parent.length){
-            parent[counter] = i;
-            System.out.println("List added at index: " + counter);
-            counter++;
+        String[] list = {"cat", "dog","car","bike"};
+        LinkedList<String> linkedlst = new LinkedList<>(Arrays.asList(list));
+
+        linkedlst.add("motor");
+        linkedlst.addFirst("things");
+
+        list = linkedlst.toArray(new String[linkedlst.size()]);
+
+        for(String i: list){
+            System.out.printf("%s ", i);
+        }
+        System.out.println();
+        Stack<String> stck = new Stack<>();
+        stck.push("cat");
+        printStck(stck);
+        stck.push("dog");
+        printStck(stck);
+        stck.push("fish");
+        printStck(stck);
+
+        stck.pop();
+        printStck(stck);
+        stck.pop();
+        printStck(stck);
+        stck.pop();
+        printStck(stck);
+
+    }
+
+    private static void printStck(Stack<String> stck) {
+        if(stck.isEmpty()){
+            System.out.println("Nothing left");
+        }else{
+            System.out.printf("%s TOP\n", stck);
         }
     }
 }
