@@ -2,17 +2,14 @@ package com.data.structure.practice;
 
 public class LinkedList {
 
-   Node head; //This is the reference to the Node class
-
-
-
+    Node head; //This is the reference to the Node class
     public void insert(int data){
         Node node = new Node(); //node instance
         node.data = data; //set the data for the node
         node.next = null;// this is optional as it will automatically set it even if we don't set it here
 
         //Check if there is an existing node or not
-        if(head == null){
+        if(head == null){//no existing node
             head = node;
         }else{
             Node n = head; //if there is an existing node, let n is head
